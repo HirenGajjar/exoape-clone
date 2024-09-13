@@ -4,7 +4,7 @@ import { MdMenu } from "react-icons/md";
 function Navbar() {
   return (
     <>
-      <div className="bg-red-500 max-w-screen-2xl mx-auto px-5 py-5 flex justify-between items-center text-white">
+      <div className="bg-red-500 max-w-screen-2xl mx-auto  px-5 sm:px-10 py-5 sm:py-10 flex justify-between items-center text-white">
         <div className="logo">
           <svg
             viewBox="0 0 95 25"
@@ -46,8 +46,15 @@ function Navbar() {
           </svg>
         </div>
         <span>
-          <MdMenu className="md:hidden" />
+          <MdMenu className="sm:hidden" />
         </span>
+        <div className="links hidden sm:flex gap-10">
+          {["Home", "About", "Pricing", "Contact"].map((item, index) => (
+            <a key={index} className="text-xs cursor-pointer font-light   ">
+              {item}
+            </a>
+          ))}
+        </div>
       </div>
     </>
   );
